@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoloTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SoloTrack</h1>
+    </header>
+
+    <main>
+        <section id="client-section">
+            <h2>Clients</h2>
+            <button onclick="showAddClientForm()">Add Client</button>
+            <ul id="client-list"></ul>
+        </section>
+
+        <section id="add-client-form" style="display:none;">
+            <h3>Add New Client</h3>
+            <input type="text" id="client-name" placeholder="Name">
+            <input type="email" id="client-email" placeholder="Email">
+            <input type="text" id="client-phone" placeholder="Phone">
+            <button onclick="addClient()">Save Client</button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
