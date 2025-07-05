@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoloTrack - Clients</title>
+    <title>SoloTrack - Invoices</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <h1>SoloTrack</h1>
         <nav>
@@ -21,8 +19,13 @@
     </header>
 
     <main>
-        <!-- my stuffgoes here -->
-        <h2>Clients</h2>
+        <h2>Invoices</h2>
+        <input type="text" id="invoice-client" placeholder="Client Name">
+        <input type="number" id="invoice-amount" placeholder="Amount (€)">
+        <input type="date" id="invoice-date">
+        <button onclick="addInvoice()">Add Invoice</button>
+
+        <ul id="invoice-list"></ul>
     </main>
 
     <script src="app.js"></script>

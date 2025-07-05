@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SoloTrack - Clients</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <h1>SoloTrack</h1>
         <nav>
@@ -21,8 +19,13 @@
     </header>
 
     <main>
-        <!-- my stuffgoes here -->
         <h2>Clients</h2>
+        <input type="text" id="client-name" placeholder="Name">
+        <input type="email" id="client-email" placeholder="Email">
+        <input type="text" id="client-phone" placeholder="Phone">
+        <button onclick="addClient()">Add Client</button>
+
+        <ul id="client-list"></ul>
     </main>
 
     <script src="app.js"></script>
