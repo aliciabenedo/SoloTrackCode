@@ -21,7 +21,16 @@
 
     <main>
         <h2>Clients</h2>
-        <p>Manage your clients here.</p>
+
+        <div class="form-group">
+            <input type="text" id="client-name" placeholder="Name">
+            <input type="email" id="client-email" placeholder="Email">
+            <input type="text" id="client-phone" placeholder="Phone">
+            <button onclick="addClient()">Add Client</button>
+        </div>
+
+        <h3>Saved Clients</h3>
+        <ul id="client-list"></ul>
     </main>
 
     <script src="app.js"></script>
