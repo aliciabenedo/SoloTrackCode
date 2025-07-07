@@ -1,4 +1,5 @@
-// CLIENTS
+//clients
+
 let clients = JSON.parse(localStorage.getItem('clients')) || [];
 
 function saveClients() {
@@ -6,12 +7,14 @@ function saveClients() {
 }
 
 function addClient() {
-    const name = document.getElementById('client-name')?.value.trim();
-    const email = document.getElementById('client-email')?.value.trim();
-    const phone = document.getElementById('client-phone')?.value.trim();
+    const name = document.getElementById('client-name').value.trim();
+    const email = document.getElementById('client-email').value.trim();
+    const phone = document.getElementById('client-phone').value.trim();
+    const message = document.getElementById('form-message');
 
     if (!name || !email || !phone) {
-        alert("Please fill in all fields.");
+        message.textContent = "Please fill in all fields.";
+        message.style.color = "red";
         return;
     }
 
@@ -20,25 +23,47 @@ function addClient() {
     saveClients();
     displayClients();
 
-    // Clear form
-    if (document.getElementById('client-name')) document.getElementById('client-name').value = '';
-    if (document.getElementById('client-email')) document.getElementById('client-email').value = '';
-    if (document.getElementById('client-phone')) document.getElementById('client-phone').value = '';
+    // Clear form + show success message
+    document.getElementById('client-name').value = '';
+    document.getElementById('client-email').value = '';
+    document.getElementById('client-phone').value = '';
+    message.textContent = "Client added successfully!";
+    message.style.color = "green";
+}
+
+function deleteClient(index) {
+    if (confirm("Are you sure you want to delete this client?")) {
+        clients.splice(index, 1);
+        saveClients();
+        displayClients();
+    }
 }
 
 function displayClients() {
     const list = document.getElementById('client-list');
+    const message = document.getElementById('form-message');
     if (!list) return;
 
     list.innerHTML = '';
-    clients.forEach(client => {
+    if (clients.length === 0) {
+        message.textContent = "No clients saved yet.";
+        message.style.color = "gray";
+    } else {
+        message.textContent = "";
+    }
+
+    clients.forEach((client, index) => {
         const li = document.createElement('li');
-        li.textContent = `${client.name} (${client.email} | ${client.phone})`;
+        li.innerHTML = `
+            <strong>${client.name}</strong> (${client.email} | ${client.phone})
+            <button onclick="deleteClient(${index})" class="delete-btn">Delete</button>
+        `;
         list.appendChild(li);
     });
 }
 
 displayClients();
+
 
 
 // INVOICES

@@ -8,27 +8,26 @@
 <body>
 
     <header>
-    <h1>SoloTrack</h1>
-    <nav>
-        <ul class="nav-list">
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="clients.html">Clients</a></li>
-            <li><a href="invoices.html">Invoices</a></li>
-            <li><a href="summary.html">Summary</a></li>
-        </ul>
-    </nav>
+        <h1>SoloTrack</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="invoices.html">Invoices</a></li>
+                <li><a href="summary.html">Summary</a></li>
+            </ul>
+        </nav>
     </header>
-
-
 
     <main>
         <h2>Clients</h2>
 
         <div class="form-group">
-            <input type="text" id="client-name" placeholder="Name">
-            <input type="email" id="client-email" placeholder="Email">
-            <input type="text" id="client-phone" placeholder="Phone">
+            <input type="text" id="client-name" placeholder="Client Name">
+            <input type="email" id="client-email" placeholder="Client Email">
+            <input type="text" id="client-phone" placeholder="Client Phone">
             <button onclick="addClient()">Add Client</button>
+            <p id="form-message" class="message"></p>
         </div>
 
         <h3>Saved Clients</h3>
