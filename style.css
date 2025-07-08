@@ -17,31 +17,42 @@ header h1 {
     font-size: 28px;
 }
 
-/* Navigation Styles */
+/* NAV */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
 nav .nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-    display: flex;
-    justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
 }
 
 nav .nav-list li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 nav .nav-list li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
 }
 
 nav .nav-list li a:hover {
-    background-color: #c0dcf8;
+  background-color: #34495e;
 }
+
 
 .form-group input {
     margin: 5px;
