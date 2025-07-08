@@ -1,41 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>SoloTrack - Login</title>
-    <link rel="stylesheet" href="style.css">
+  <title>SoloTrack - Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main class="login-main">
+    <h2>Login to SoloTrack</h2>
+    <div class="login-box">
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button type="button" onclick="login()">Login</button>
+      <p id="login-message" class="message"></p>
+    </div>
+  </main>
 
-    <main class="login-main">
-        <h2>Login to SoloTrack</h2>
-
-        <div class="login-box">
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-            <button onclick="login()">Login</button>
-            <p id="login-message" class="message"></p>
-        </div>
-    </main>
-
-    <script>
-        function login() {
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
-            const message = document.getElementById('login-message');
-
-            // Very basic login check (hardcoded for now)
-            if (username === "admin" && password === "admin123") {
-                message.textContent = "Login successful!";
-                message.style.color = "green";
-                // Redirect to dashboard after 1 second
-                setTimeout(() => window.location.href = "index.html", 1000);
-            } else {
-                message.textContent = "Invalid username or password.";
-                message.style.color = "red";
-            }
-        }
-    </script>
-
+  <script src="app.js"></script>
 </body>
 </html>

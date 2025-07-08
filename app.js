@@ -71,3 +71,20 @@ function displayClients() {
 }
 
 displayClients();
+function signUp() {
+    const username = document.getElementById('new-username').value.trim();
+    const password = document.getElementById('new-password').value.trim();
+    const message = document.getElementById('signup-message');
+
+    if (!username || !password) {
+        message.textContent = "Please fill in both fields.";
+        message.style.color = "red";
+        return;
+    }
+
+    localStorage.setItem('user', JSON.stringify({ username, password }));
+    message.textContent = "Sign up successful! Redirecting to login...";
+    message.style.color = "green";
+
+    setTimeout(() => window.location.href = "login.html", 1500);
+}
