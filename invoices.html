@@ -1,36 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>SoloTrack - Invoices</title>
-    <link rel="stylesheet" href="style.css">
+  <title>SoloTrack Invoices</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <header>
-    <h1>SoloTrack</h1>
-    <nav>
-        <ul class="nav-list">
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="clients.html">Clients</a></li>
-            <li><a href="invoices.html">Invoices</a></li>
-            <li><a href="summary.html">Summary</a></li>
-        </ul>
-    </nav>
-</header>
-    <script>
-    if (localStorage.getItem('loggedIn') !== 'true') {
-        window.location.href = "login.html";
-    }
-    </script>
+  <header>nav</header>
 
+  <main>
+    <h2>Invoices</h2>
+    <input type="text" id="invoice-client" placeholder="Client Name">
+    <input type="number" id="invoice-amount" placeholder="Amount">
+    <input type="date" id="invoice-date">
+    <button onclick="addInvoice()">Add Invoice</button>
+    <ul id="invoice-list"></ul>
+  </main>
 
-
-    <main>
-        <h2>Invoices</h2>
-        <p>Manage your invoices here.</p>
-    </main>
-
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

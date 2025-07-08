@@ -88,3 +88,26 @@ function signUp() {
 
     setTimeout(() => window.location.href = "login.html", 1500);
 }
+function login() {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const message = document.getElementById('login-message');
+
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+
+    if (storedUser && username === storedUser.username && password === storedUser.password) {
+        message.textContent = "Login successful!";
+        message.style.color = "green";
+        localStorage.setItem('loggedIn', 'true');
+        setTimeout(() => window.location.href = "index.html", 1000);
+    } else {
+        message.textContent = "Invalid username or password.";
+        message.style.color = "red";
+    }
+}
+
+
+function logout() {
+    localStorage.removeItem('loggedIn');
+    window.location.href = "login.html";
+}

@@ -1,45 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>SoloTrack - Clients</title>
-    <link rel="stylesheet" href="style.css">
+  <title>SoloTrack  Clients</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>nav</header>
 
-    <header>
-        <h1>SoloTrack</h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="clients.html">Clients</a></li>
-                <li><a href="invoices.html">Invoices</a></li>
-                <li><a href="summary.html">Summary</a></li>
-            </ul>
-        </nav>
-    </header>
-    <script>
-    if (localStorage.getItem('loggedIn') !== 'true') {
-        window.location.href = "login.html";
-    }
-    </script>
+  <main>
+    <h2>Clients</h2>
+    <input type="text" id="client-name" placeholder="Name">
+    <input type="email" id="client-email" placeholder="Email">
+    <input type="text" id="client-phone" placeholder="Phone">
+    <button onclick="addClient()">Add Client</button>
+    <p id="form-message"></p>
+    <ul id="client-list"></ul>
+  </main>
 
-
-    <main>
-        <h2>Clients</h2>
-
-        <div class="form-group">
-            <input type="text" id="client-name" placeholder="Client Name">
-            <input type="email" id="client-email" placeholder="Client Email">
-            <input type="text" id="client-phone" placeholder="Client Phone">
-            <button onclick="addClient()">Add Client</button>
-            <p id="form-message" class="message"></p>
-        </div>
-
-        <h3>Saved Clients</h3>
-        <ul id="client-list"></ul>
-    </main>
-
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

@@ -1,36 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>SoloTrack - Summary</title>
-    <link rel="stylesheet" href="style.css">
+  <title>SoloTrack Summary</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <header>
-    <h1>SoloTrack</h1>
-    <nav>
-        <ul class="nav-list">
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="clients.html">Clients</a></li>
-            <li><a href="invoices.html">Invoices</a></li>
-            <li><a href="summary.html">Summary</a></li>
-        </ul>
-    </nav>
-</header>
-    <script>
-    if (localStorage.getItem('loggedIn') !== 'true') {
-        window.location.href = "login.html";
-    }
-    </script>
+  <header>nav</header>
 
+  <main>
+    <h2>Financial Summary</h2>
+    <p>Total Income: €<span id="total-income">0</span></p>
+    <p>Total Invoices: <span id="total-invoices">0</span></p>
+  </main>
 
-    <main>
-        <h2>Financial Summary</h2>
-        <p>Total Income: €<span id="total-income">0</span></p>
-        <p>Number of Invoices: <span id="total-invoices">0</span></p>
-    </main>
-
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
