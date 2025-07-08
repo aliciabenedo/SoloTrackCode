@@ -8,21 +8,40 @@
 <body>
 
     <header>
-    <h1>SoloTrack</h1>
-    <nav>
-        <ul class="nav-list">
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="clients.html">Clients</a></li>
-            <li><a href="invoices.html">Invoices</a></li>
-            <li><a href="summary.html">Summary</a></li>
-        </ul>
-    </nav>
+        <h1>SoloTrack</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="invoices.html">Invoices</a></li>
+                <li><a href="summary.html">Summary</a></li>
+            </ul>
+        </nav>
     </header>
 
-
-    <main>
+    <main class="dashboard-main">
         <h2>Welcome to SoloTrack</h2>
-        <p>Your all-in-one freelance business management tool.</p>
+        <p class="dashboard-intro">Your allinone freelance management tool. Track your clients, invoices, and income easily and stress free.</p>
+
+        <div class="dashboard-cards">
+            <div class="dashboard-card">
+                <h3>Clients</h3>
+                <p>Manage your clients and their contact details.</p>
+                <a href="clients.html" class="btn">Go to Clients</a>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Invoices</h3>
+                <p>Create and manage invoices linked to your clients.</p>
+                <a href="invoices.html" class="btn">Go to Invoices</a>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Financial Summary</h3>
+                <p>View total income, pending payments, and financial info</p>
+                <a href="summary.html" class="btn">View Summary</a>
+            </div>
+        </div>
     </main>
 
     <script src="app.js"></script>

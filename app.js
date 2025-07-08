@@ -1,5 +1,4 @@
-//clients
-
+// CLIENTS
 let clients = JSON.parse(localStorage.getItem('clients')) || [];
 
 function saveClients() {
@@ -12,8 +11,17 @@ function addClient() {
     const phone = document.getElementById('client-phone').value.trim();
     const message = document.getElementById('form-message');
 
+    // Validate: empty fields
     if (!name || !email || !phone) {
         message.textContent = "Please fill in all fields.";
+        message.style.color = "red";
+        return;
+    }
+
+    // Validate: email format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        message.textContent = "Please enter a valid email address.";
         message.style.color = "red";
         return;
     }
@@ -23,7 +31,7 @@ function addClient() {
     saveClients();
     displayClients();
 
-    // Clear form + show success message
+    // Clear form + success message
     document.getElementById('client-name').value = '';
     document.getElementById('client-email').value = '';
     document.getElementById('client-phone').value = '';
@@ -63,54 +71,3 @@ function displayClients() {
 }
 
 displayClients();
-
-
-
-// INVOICES
-let invoices = JSON.parse(localStorage.getItem('invoices')) || [];
-
-function saveInvoices() {
-    localStorage.setItem('invoices', JSON.stringify(invoices));
-}
-
-function addInvoice() {
-    const client = document.getElementById('invoice-client')?.value.trim();
-    const amount = parseFloat(document.getElementById('invoice-amount')?.value);
-    const date = document.getElementById('invoice-date')?.value;
-
-    if (!client || isNaN(amount) || !date) {
-        alert("Please fill in all fields.");
-        return;
-    }
-
-    const invoice = { client, amount, date };
-    invoices.push(invoice);
-    saveInvoices();
-    displayInvoices();
-}
-
-function displayInvoices() {
-    const list = document.getElementById('invoice-list');
-    if (!list) return;
-
-    list.innerHTML = '';
-    invoices.forEach(i => {
-        const li = document.createElement('li');
-        li.textContent = `${i.client}: €${i.amount} on ${i.date}`;
-        list.appendChild(li);
-    });
-}
-
-displayInvoices();
-
-
-// SUMMARY
-function updateSummary() {
-    const totalIncome = invoices.reduce((sum, i) => sum + Number(i.amount), 0);
-    if (document.getElementById('total-income')) {
-        document.getElementById('total-income').innerText = totalIncome.toFixed(2);
-        document.getElementById('total-invoices').innerText = invoices.length;
-    }
-}
-
-updateSummary();

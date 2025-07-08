@@ -87,3 +87,86 @@ nav .nav-list li a:hover {
 .delete-btn:hover {
     background-color: #c0392b;
 }
+
+.dashboard-main {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.dashboard-intro {
+    max-width: 600px;
+    margin: 10px auto 30px;
+    font-size: 16px;
+    color: #555;
+}
+
+.dashboard-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dashboard-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.dashboard-card h3 {
+    margin-top: 0;
+}
+
+.dashboard-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+.login-main {
+    text-align: center;
+    padding: 50px 10px;
+}
+
+.login-box {
+    background: #fff;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.login-box input {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    padding: 8px;
+}
+
+.login-box button {
+    padding: 8px 15px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.login-box button:hover {
+    background-color: #2980b9;
+}
