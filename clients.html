@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SoloTrack  Clients</title>
+  <meta charset="UTF-8">
+  <title>SoloTrack - Clients</title>
   <link rel="stylesheet" href="style.css">
 </head>
-  <body>
+<body>
 
+  <!-- Navibar -->
   <header>
     <h1>SoloTrack</h1>
     <nav>
@@ -19,14 +21,18 @@
     </nav>
   </header>
 
-  <main>
+  <main class="main-content">
     <h2>Clients</h2>
-    <input type="text" id="client-name" placeholder="Name">
-    <input type="email" id="client-email" placeholder="Email">
-    <input type="text" id="client-phone" placeholder="Phone">
-    <button onclick="addClient()">Add Client</button>
-    <p id="form-message"></p>
-    <ul id="client-list"></ul>
+
+    <div class="form-group">
+      <input type="text" id="client-name" placeholder="Name">
+      <input type="email" id="client-email" placeholder="Email">
+      <input type="text" id="client-phone" placeholder="Phone">
+      <button onclick="addClient()">Add Client</button>
+      <p id="form-message" class="message"></p>
+    </div>
+
+    <ul id="client-list" class="client-list"></ul>
   </main>
 
   <script src="app.js"></script>
