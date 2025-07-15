@@ -43,18 +43,30 @@ function deleteClient(index) {
   }
 }
 
-function displayClients() {
+function displayClients(filtered = clients) {
   const list = document.getElementById('client-list');
   const message = document.getElementById('form-message');
   if (!list) return;
 
   list.innerHTML = '';
-  if (clients.length === 0) {
-    message.textContent = "No clients added yet.";
+  if (filtered.length === 0) {
+    message.textContent = "No clients match your search.";
     message.style.color = "gray";
   } else {
     message.textContent = "";
   }
+
+  filtered.forEach((client, index) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <strong>${client.name}</strong> (${client.email} | ${client.phone})
+      <button onclick="editClient(${index})" class="edit-btn">Edit</button>
+      <button onclick="deleteClient(${index})" class="delete-btn">Delete</button>
+    `;
+    list.appendChild(li);
+  });
+}
+
 
   clients.forEach((client, index) => {
     const li = document.createElement('li');
