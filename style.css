@@ -229,3 +229,12 @@ nav .nav-list li a:hover {
   float: right;
   cursor: pointer;
 }
+.edit-btn {
+  background: #f39c12;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  float: right;
+  cursor: pointer;
+}

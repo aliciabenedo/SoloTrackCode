@@ -76,7 +76,37 @@ function displayClients(filtered = clients) {
     `;
     list.appendChild(li);
   });
+  function filterClients() {
+  const query = document.getElementById('search-client').value.toLowerCase();
+  const filtered = clients.filter(c =>
+    c.name.toLowerCase().includes(query) ||
+    c.email.toLowerCase().includes(query)
+  );
+  displayClients(filtered);
 }
+function editClient(index) {
+  const client = clients[index];
+  const newName = prompt("Edit name:", client.name);
+  const newEmail = prompt("Edit email:", client.email);
+  const newPhone = prompt("Edit phone:", client.phone);
+
+  if (newName && newEmail && newPhone) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(newEmail)) {
+      alert("Invalid email format.");
+      return;
+    }
+
+    clients[index] = {
+      name: newName.trim(),
+      email: newEmail.trim(),
+      phone: newPhone.trim()
+    };
+    saveClients();
+    displayClients();
+  }
+}
+
 
 displayClients();
 
