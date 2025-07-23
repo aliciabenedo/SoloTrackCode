@@ -255,3 +255,31 @@ function logout() {
     localStorage.removeItem('loggedIn');
     window.location.href = "login.html";
 }
+  // Set theme on page load
+  window.onload = function () {
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.body;
+    const toggleBtn = document.getElementById('theme-toggle');
+
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      if (toggleBtn) toggleBtn.textContent = "Light Mode";
+    } else {
+      if (toggleBtn) toggleBtn.textContent = "Dark Mode";
+    }
+  };
+
+  // dark mode
+  function toggleDarkMode() {
+    const body = document.body;
+    const toggleBtn = document.getElementById('theme-toggle');
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+      toggleBtn.textContent = "Light Mode";
+    } else {
+      localStorage.setItem('theme', 'light');
+      toggleBtn.textContent = "Dark Mode";
+    }
+  }
