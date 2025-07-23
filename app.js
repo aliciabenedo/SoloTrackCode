@@ -128,6 +128,95 @@ function login() {
     }
 }
 
+let invoices = JSON.parse(localStorage.getItem('invoices')) || [];
+
+function saveInvoices() {
+  localStorage.setItem('invoices', JSON.stringify(invoices));
+}
+
+function addInvoice() {
+  const client = document.getElementById('invoice-client').value.trim();
+  const amount = parseFloat(document.getElementById('invoice-amount').value.trim());
+  const date = document.getElementById('invoice-date').value.trim();
+  const message = document.getElementById('invoice-message');
+
+  if (!client || isNaN(amount) || !date) {
+    message.textContent = "Please fill in all fields correctly.";
+    message.style.color = "red";
+    return;
+  }
+
+  invoices.push({ client, amount, date });
+  saveInvoices();
+  displayInvoices();
+
+  document.getElementById('invoice-client').value = '';
+  document.getElementById('invoice-amount').value = '';
+  document.getElementById('invoice-date').value = '';
+  message.textContent = "Invoice added successfully!";
+  message.style.color = "green";
+}
+
+function deleteInvoice(index) {
+  if (confirm("Are you sure you want to delete this invoice?")) {
+    invoices.splice(index, 1);
+    saveInvoices();
+    displayInvoices();
+  }
+}
+
+function editInvoice(index) {
+  const invoice = invoices[index];
+  const newAmount = prompt("Edit amount (€):", invoice.amount);
+  const newDate = prompt("Edit date (YYYY-MM-DD):", invoice.date);
+
+  if (newAmount && newDate && !isNaN(parseFloat(newAmount))) {
+    invoices[index].amount = parseFloat(newAmount);
+    invoices[index].date = newDate;
+    saveInvoices();
+    displayInvoices();
+  } else {
+    alert("Invalid input.");
+  }
+}
+
+function displayInvoices(filtered = invoices) {
+  const list = document.getElementById('invoice-list');
+  if (!list) return;
+
+  list.innerHTML = '';
+  filtered.forEach((inv, index) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <strong>${inv.client}</strong>: €${inv.amount.toFixed(2)} on ${inv.date}
+      <button class="edit-btn" onclick="editInvoice(${index})">Edit</button>
+      <button class="delete-btn" onclick="deleteInvoice(${index})">Delete</button>
+    `;
+    list.appendChild(li);
+  });
+}
+
+function filterInvoices() {
+  const query = document.getElementById('search-invoice').value.toLowerCase();
+  const filtered = invoices.filter(i =>
+    i.client.toLowerCase().includes(query) ||
+    i.date.includes(query)
+  );
+  displayInvoices(filtered);
+}
+
+function sortInvoices(criterion) {
+  if (criterion === 'date') {
+    invoices.sort((a, b) => new Date(a.date) - new Date(b.date));
+  } else if (criterion === 'amount') {
+    invoices.sort((a, b) => a.amount - b.amount);
+  }
+  displayInvoices();
+}
+
+displayInvoices();
+
+
 
 function logout() {
     localStorage.removeItem('loggedIn');
