@@ -247,3 +247,11 @@ nav .nav-list li a.active {
     width: 90%;
   }
 }
+main, .dashboard-main, .login-main, .form-group, .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
