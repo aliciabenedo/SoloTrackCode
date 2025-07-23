@@ -255,3 +255,13 @@ main, .dashboard-main, .login-main, .form-group, .container {
   text-align: center;
   margin: auto;
 }
+
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --header-bg: #2c3e50;
+  --nav-hover: #34495e;
+  --card-bg: #fff;
+  --button-bg: #3498db;
+  --button-text: white;
+}
