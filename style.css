@@ -279,10 +279,11 @@ header {
 
 body.dark-mode {
   --bg-color: #1e1e1e;
-  --text-color: #f4f4f4;
+  --text-color: #dddddd; 
   --header-bg: #121212;
   --nav-hover: #333;
   --card-bg: #2a2a2a;
   --button-bg: #8e44ad;
   --button-text: #fff;
 }
+
