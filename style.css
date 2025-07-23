@@ -265,3 +265,9 @@ main, .dashboard-main, .login-main, .form-group, .container {
   --button-bg: #3498db;
   --button-text: white;
 }
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
