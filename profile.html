@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>SoloTrack - My Account</title>
@@ -15,7 +15,7 @@
         <li><a href="clients.html">Clients</a></li>
         <li><a href="invoices.html">Invoices</a></li>
         <li><a href="summary.html">Summary</a></li>
-        <li><a href="profile.html">Profile</a></li>
+        <li><a href="profile.html" class="active">Profile</a></li>
       </ul>
     </nav>
   </header>
@@ -24,13 +24,20 @@
     <h2>My Account</h2>
     <p>Welcome, <span id="profile-username"></span></p>
 
-    <button onclick="logout()" class="btn">Logout</button>
+    <div class="form-group">
+      <button onclick="logout()" class="btn">Logout</button>
+      <button onclick="location.href='signup.html'" class="btn" style="background-color:#8e44ad;">Sign Up</button>
+    </div>
   </main>
 
-  <script src="app.js"></script>
   <script>
     const user = JSON.parse(localStorage.getItem('user'));
     document.getElementById('profile-username').innerText = user ? user.username : 'Guest';
+
+    function logout() {
+      localStorage.removeItem('loggedIn');
+      window.location.href = 'login.html';
+    }
   </script>
 </body>
 </html>
