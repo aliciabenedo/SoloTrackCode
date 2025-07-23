@@ -238,3 +238,34 @@ nav .nav-list li a:hover {
   float: right;
   cursor: pointer;
 }
+.invoice-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.invoice-list li {
+  background: #f9f9f9;
+  padding: 10px;
+  margin: 10px 0;
+  border-left: 4px solid #8e44ad;
+}
+
+.edit-btn {
+  background: #f39c12;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  float: right;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  float: right;
+  cursor: pointer;
+}
