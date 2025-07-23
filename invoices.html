@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SoloTrack Invoices</title>
+  <title>SoloTrack - Invoices</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header>
     <h1>SoloTrack</h1>
     <nav>
@@ -21,11 +20,23 @@
 
   <main>
     <h2>Invoices</h2>
-    <input type="text" id="invoice-client" placeholder="Client Name">
-    <input type="number" id="invoice-amount" placeholder="Amount">
-    <input type="date" id="invoice-date">
-    <button onclick="addInvoice()">Add Invoice</button>
-    <ul id="invoice-list"></ul>
+
+    <div class="form-group">
+      <input type="text" id="invoice-client" placeholder="Client Name">
+      <input type="number" id="invoice-amount" placeholder="Amount">
+      <input type="date" id="invoice-date">
+      <button onclick="addInvoice()">Add Invoice</button>
+      <p id="invoice-message" class="message"></p>
+    </div>
+
+    <input type="text" id="search-invoice" placeholder="Search invoices..." oninput="filterInvoices()">
+    <select onchange="sortInvoices(this.value)">
+      <option value="">Sort By</option>
+      <option value="date">Date</option>
+      <option value="amount">Amount</option>
+    </select>
+
+    <ul id="invoice-list" class="invoice-list"></ul>
   </main>
 
   <script src="app.js"></script>
