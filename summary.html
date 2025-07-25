@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>SoloTrack Summary</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,19 +14,22 @@
         <li><a href="index.html">Dashboard</a></li>
         <li><a href="clients.html">Clients</a></li>
         <li><a href="invoices.html">Invoices</a></li>
-        <li><a href="summary.html">Summary</a></li>
+        <li><a href="summary.html" class="active">Summary</a></li>
         <li><a href="profile.html">Profile</a></li>
       </ul>
+      <button onclick="toggleDarkMode()" id="theme-toggle" class="btn">Dark Mode</button>
     </nav>
-    <button onclick="toggleDarkMode()" id="theme-toggle" class="btn">Dark Mode</button>
   </header>
-<body>
   <main class="container">
     <h2>Financial Summary</h2>
-    <p>Total Income: €<span id="total-income">0</span></p>
-    <p>Total Invoices: <span id="total-invoices">0</span></p>
+    <div class="summary-stats">
+      <p>Total Income: €<span id="total-income">0</span></p>
+      <p>Total Invoices: <span id="total-invoices">0</span></p>
+    </div>
   </main>
 
   <script src="app.js"></script>
 </body>
+
 </html>
+
