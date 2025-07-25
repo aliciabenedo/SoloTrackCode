@@ -215,7 +215,6 @@ updateSummary();
 
 
 // AUTH: LOGIN / SIGNUP / LOGOUT
-// SIGN UP
 function signUp() {
   const username = document.getElementById('new-username').value.trim();
   const password = document.getElementById('new-password').value.trim();
@@ -227,13 +226,22 @@ function signUp() {
     return;
   }
 
-  const user = { username, password };
-  localStorage.setItem('user', JSON.stringify(user));
+  const existingUser = JSON.parse(localStorage.getItem('user'));
+
+  if (existingUser && existingUser.username === username) {
+    message.textContent = "User already exists. Please log in.";
+    message.style.color = "red";
+    return;
+  }
+
+  const newUser = { username, password };
+  localStorage.setItem('user', JSON.stringify(newUser));
   message.textContent = "Sign up successful! Redirecting to login...";
   message.style.color = "green";
 
   setTimeout(() => window.location.href = "login.html", 1500);
 }
+
 
 // LOGIN
 function login() {
