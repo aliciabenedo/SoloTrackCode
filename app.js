@@ -215,23 +215,51 @@ updateSummary();
 
 
 // AUTH: LOGIN / SIGNUP / LOGOUT
+// SIGN UP
 function signUp() {
-    const username = document.getElementById('new-username')?.value.trim();
-    const password = document.getElementById('new-password')?.value.trim();
-    const message = document.getElementById('signup-message');
+  const username = document.getElementById('new-username').value.trim();
+  const password = document.getElementById('new-password').value.trim();
+  const message = document.getElementById('signup-message');
 
-    if (!username || !password) {
-        message.textContent = "Please fill in both fields.";
-        message.style.color = "red";
-        return;
-    }
+  if (!username || !password) {
+    message.textContent = "Please fill in both fields.";
+    message.style.color = "red";
+    return;
+  }
 
-    localStorage.setItem('user', JSON.stringify({ username, password }));
-    message.textContent = "Sign up successful! Redirecting...";
-    message.style.color = "green";
+  const user = { username, password };
+  localStorage.setItem('user', JSON.stringify(user));
+  message.textContent = "Sign up successful! Redirecting to login...";
+  message.style.color = "green";
 
-    setTimeout(() => window.location.href = "login.html", 1500);
+  setTimeout(() => window.location.href = "login.html", 1500);
 }
+
+// LOGIN
+function login() {
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+  const message = document.getElementById('login-message');
+
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+
+  if (storedUser && username === storedUser.username && password === storedUser.password) {
+    localStorage.setItem('loggedIn', 'true');
+    message.textContent = "Login successful!";
+    message.style.color = "green";
+    setTimeout(() => window.location.href = "index.html", 1000);
+  } else {
+    message.textContent = "Invalid username or password.";
+    message.style.color = "red";
+  }
+}
+
+// LOGOUT (used in profile)
+function logout() {
+  localStorage.removeItem('loggedIn');
+  window.location.href = "login.html";
+}
+
 
 function login() {
     const username = document.getElementById('username')?.value.trim();
