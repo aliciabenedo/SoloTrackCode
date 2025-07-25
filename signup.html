@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SoloTrack Sign Up</title>
+  <title>Sign Up - SoloTrack</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <main class="container">
-    <h2>Sign Up for SoloTrack</h2>
+
+  <main class="login-main">
+    <h2>Sign Up</h2>
     <div class="login-box">
-      <input type="text" id="new-username" placeholder="Create Username">
-      <input type="password" id="new-password" placeholder="Create Password">
-      <button type="button" onclick="signUp()">Sign Up</button>
+      <input type="text" id="new-username" placeholder="Choose a username">
+      <input type="password" id="new-password" placeholder="Choose a password">
+      <button onclick="signUp()">Sign Up</button>
       <p id="signup-message" class="message"></p>
+
+      <p>Already have an account? 
+        <a href="login.html" class="btn">Login</a>
+      </p>
     </div>
-    <button onclick="toggleDarkMode()" id="theme-toggle" class="btn">Dark Mode</button>
   </main>
 
   <script src="app.js"></script>
