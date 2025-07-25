@@ -1,45 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>SoloTrack - Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
     <h1>SoloTrack</h1>
     <nav>
       <ul class="nav-list">
-        <li><a href="index.html" class="active">Dashboard</a></li>
+        <li><a href="index.html">Dashboard</a></li>
         <li><a href="clients.html">Clients</a></li>
         <li><a href="invoices.html">Invoices</a></li>
         <li><a href="summary.html">Summary</a></li>
         <li><a href="profile.html">Profile</a></li>
       </ul>
-      <button onclick="toggleDarkMode()" id="theme-toggle" class="btn">Dark Mode</button>
+      <button onclick="toggleDarkMode()" id="theme-toggle" class="btn"> Dark Mode</button>
+
     </nav>
   </header>
 
   <main class="container">
     <h2>Welcome to SoloTrack</h2>
-    <p class="dashboard-intro">Track clients, invoices, and finances all in one place.</p>
-
+    <p class="dashboard-intro">Track clients, invoices, and finances.</p>
     <div class="dashboard-cards">
-      <div class="dashboard-card">
-        <h3>Clients</h3>
-        <p>Manage your client list efficiently.</p>
-        <a href="clients.html" class="btn">Go to Clients</a>
-      </div>
-      <div class="dashboard-card">
-        <h3>Invoices</h3>
-        <p>Create, edit and track invoices with ease.</p>
-        <a href="invoices.html" class="btn">Go to Invoices</a>
-      </div>
-      <div class="dashboard-card">
-        <h3>Summary</h3>
-        <p>Get financial insights and overview.</p>
-        <a href="summary.html" class="btn">View Summary</a>
-      </div>
+      <div class="dashboard-card"><h3>Clients</h3><a href="clients.html" class="btn">Go to Clients</a></div>
+      <div class="dashboard-card"><h3>Invoices</h3><a href="invoices.html" class="btn">Go to Invoices</a></div>
+      <div class="dashboard-card"><h3>Summary</h3><a href="summary.html" class="btn">View Summary</a></div>
     </div>
   </main>
 

@@ -7,12 +7,13 @@
 </head>
 <body>
 
+  <!-- Navibar -->
   <header>
     <h1>SoloTrack</h1>
     <nav>
       <ul class="nav-list">
         <li><a href="index.html">Dashboard</a></li>
-        <li><a href="clients.html" class="active">Clients</a></li>
+        <li><a href="clients.html">Clients</a></li>
         <li><a href="invoices.html">Invoices</a></li>
         <li><a href="summary.html">Summary</a></li>
         <li><a href="profile.html">Profile</a></li>
@@ -31,8 +32,8 @@
       <button onclick="addClient()">Add Client</button>
       <p id="form-message" class="message"></p>
     </div>
-
     <input type="text" id="search-client" placeholder="Search clients..." oninput="filterClients()">
+
 
     <ul id="client-list" class="client-list"></ul>
   </main>
